@@ -38,22 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tailwind',
-    'theme',
     'core',
-    "django_browser_reload",
+    # 'tailwind',
+    # 'theme',
+    # "django_browser_reload",
 ]
 
-TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = ["127.0.0.1"]
+# TAILWIND_APP_NAME = 'theme'
+# INTERNAL_IPS = ["127.0.0.1"]
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '2022ee297@student.uet.edu.pk'
-EMAIL_HOST_PASSWORD = 'your_app_password'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = '2022ee297@student.uet.edu.pk'
+# EMAIL_HOST_PASSWORD = 'your_app_password'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_browser_reload.middleware.BrowserReloadMiddleware',
+    # 'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
