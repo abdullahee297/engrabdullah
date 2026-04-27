@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from django.shortcuts import render
-from django.core.mail import send_mail
 from .forms import ContactForm
 from .models import ContactMessage
 
+
+from pymongo import MongoClient
+import os
 
 def base(request):
     return render(request, 'index.html')
@@ -16,27 +18,50 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+client = MongoClient(os.environ["MONGO_URI"])
+db = client["portfolio"]
+collection = db["contacts"]
+
 def contact(request):
     success = False
 
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
 
-        ContactMessage.objects.create(
-            name=name,
-            email=email,
-            message=message
-        )
+        collection.insert_one({
+            "name": name,
+            "email": email,
+            "message": message
+        })
 
         success = True
 
     return render(request, "contact.html", {"success": success})
+
+# def contact(request):
+#     success = False
+
+#     if request.method == "POST":
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         message = request.POST.get('message')
+
+#         ContactMessage.objects.create(
+#             name=name,
+#             email=email,
+#             message=message
+#         )
+
+#         success = True
+
+#     return render(request, "contact.html", {"success": success})
+
 def education(request):
     return render(request, 'education.html')
 
-def exerience(request):
+def experience(request):
     return render(request, 'experience.html')
 
 def projects(request):
