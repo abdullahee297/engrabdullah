@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 import os
-from django.core.wsgi import get_wsgi_application
+import sys
+
+path = '/home/yourusername/your-project'
+if path not in sys.path:
+    sys.path.append(path)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio.settings")
 
-=======
-import os
 from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio.settings")
-
->>>>>>> ec58928 (Crash Error Solve)
-app = get_wsgi_application()
+application = get_wsgi_application()
