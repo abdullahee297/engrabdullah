@@ -18,27 +18,44 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-client = MongoClient(os.environ["MONGO_URI"])
-db = client["portfolio"]
-collection = db["contacts"]
+
+MONGO_URI = os.environ.get("MONGO_URI")
+
+client = None
+collection = None
+
+if MONGO_URI:
+    client = MongoClient(MONGO_URI)
+    db = client["portfolio"]
+    collection = db["contacts"]
 
 def contact(request):
     success = False
+    error = None
 
     if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
+        try:
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            message = request.POST.get("message")
 
-        collection.insert_one({
-            "name": name,
-            "email": email,
-            "message": message
-        })
+            if collection:
+                collection.insert_one({
+                    "name": name,
+                    "email": email,
+                    "message": message
+                })
 
-        success = True
+            success = True
 
-    return render(request, "contact.html", {"success": success})
+        except Exception as e:
+            error = str(e)
+
+    return render(request, "contact.html", {
+        "success": success,
+        "error": error
+    })
+
 
 # def contact(request):
 #     success = False
