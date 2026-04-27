@@ -1,0 +1,283 @@
+
+
+/* 1. Base Setup */
+:root {
+    --primary-color: #0955f8;
+    --bg-light: #9c9c9c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    
+    background: linear-gradient(90deg, #727272, #1d2223);
+    /* background: linear-gradient(90deg, #014d50, #0ddb70); */
+}
+
+main {
+    flex: 1; /* Pushes footer down */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px;
+
+    background: linear-gradient(90deg, #003d4d, #00c996);
+    backdrop-filter: blur(10px);
+
+    color: #f1f5f9;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+nav .logo{
+    background: linear-gradient(90deg, #acb6e5, #86fde8);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    font-weight: bold;
+}
+
+/* Links container */
+.links {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.links a {
+    position: relative;
+    text-decoration: none;
+
+    color: #e2e8f0;
+    font-size: 1.05rem;        
+    font-weight: 600;            
+    letter-spacing: 0.5px;
+
+    padding: 6px 10px;
+
+    transition: all 0.3s ease;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    transition: width 0.3s ease;
+}
+
+.links a:hover {
+    color: #020202;
+    transform: translateY(-2px);
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+.links a.active {
+    color: #ffffff;
+    background: rgba(0, 255, 213, 0.15);
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 213, 0.3);
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 50%;
+    bottom: -6px;
+
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #d3d3d3, #ffffff);
+
+    transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+/* Smooth hover lift */
+.links a:hover {
+    transform: translateY(-2px);
+}
+
+footer {
+    background: linear-gradient(320deg, #003d4d, #00c996);
+    color: rgb(233, 162, 162);
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+footer h1{
+    background-image: linear-gradient(90deg, #00ffb7, #ff0090);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    font-weight: bold;
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.socials a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.socials i{
+    font-size: 20px;
+}
+
+.socials a:nth-child(1):hover {
+    background: #0077b5;
+}
+
+.socials a:nth-child(2):hover {
+    background: #333;
+}
+
+.socials a:nth-child(3):hover {
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.socials a:nth-child(4):hover {
+    background: #00c996; 
+}
+
+.socials a:hover {
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 201, 150, 0.4);
+}
+
+.project-card img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ============================= */
+/* 📱 Mobile Devices (<= 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .links a {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    footer h1 {
+        font-size: 1.2rem;
+    }
+
+    .socials {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .socials a {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .socials i {
+        font-size: 16px;
+    }
+}
+
+
+/* ============================= */
+/* 📱 Small Mobile (<= 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+
+    nav .logo {
+        font-size: 1rem;
+    }
+
+    .links {
+        gap: 0.6rem;
+    }
+
+    .links a {
+        font-size: 0.75rem;
+    }
+
+    .socials {
+        flex-direction: column;
+    }
+
+    .socials a {
+        width: 80%;
+        justify-content: center;
+    }
+}
