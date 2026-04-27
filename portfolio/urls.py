@@ -30,5 +30,5 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('skills/', views.skill, name='skill'),
     
-    path("__reload__/", include("django_browser_reload.urls")),
+    # path("__reload__/", include("django_browser_reload.urls")),
 ]
