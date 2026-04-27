@@ -21,8 +21,8 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', views.base, name='base'),
-    path('home', views.home, name='home'),
+    # path('', views.base, name='base'),
+    path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('education/', views.education, name='education'),
@@ -30,4 +30,5 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('skills/', views.skill, name='skill'),
     
+    path("__reload__/", include("django_browser_reload.urls")),
 ]

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from django.shortcuts import render
+from django.core.mail import send_mail
 from .forms import ContactForm
 from .models import ContactMessage
 
@@ -56,7 +57,7 @@ def projects(request):
             "domain": "Django Web Development",
             "category": "web",
             "description": "A powerful web application that allows users to upload PDFs and perform operations like data extraction, merging, watermarking, and encryption in a user-friendly interface.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/pdf.png",
             "github": "https://github.com/abdullahee297/Django-PyPDF",
             "demo": "https://django-py-pdf-w64m.vercel.app/"
         },
@@ -66,7 +67,7 @@ def projects(request):
             "domain": "Computer Vision / AI",
             "category": "ml",
             "description": "An AI-based system using MediaPipe that enables users to control the mouse pointer using hand gestures, specifically tracking the index finger for real-time interaction.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/mouse.png",
             "github": "https://github.com/abdullahee297/VirtualMouse",
             "demo": "#"
         },
@@ -76,7 +77,7 @@ def projects(request):
             "domain": "Computer Vision / AI",
             "category": "ml",
             "description": "A gesture-based drawing system that allows users to draw on screen using hand movements with multiple colors and an eraser feature powered by MediaPipe.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/paint.png",
             "github": "https://github.com/abdullahee297/AI-Virtual-Painter",
             "demo": "#"
         },
@@ -96,7 +97,7 @@ def projects(request):
             "domain": "AI / NLP",
             "category": "ai",
             "description": "An intelligent chatbot built with Django and Ollama (LLaMA 3) that processes user input and generates contextual responses in real-time.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/chatbot.png",
             "github": "https://github.com/abdullahee297/Django-ChatBot",
             "demo": "#"
         },
@@ -106,7 +107,7 @@ def projects(request):
             "domain": "Machine Learning",
             "category": "ml",
             "description": "A machine learning-based system that detects whether a message is spam or not using text classification techniques.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/spam.png",
             "github": "https://github.com/abdullahee297/ML-SpamMessages",
             "demo": "#"
         },
@@ -116,9 +117,9 @@ def projects(request):
             "domain": "Django / API Integration",
             "category": "web",
             "description": "A weather forecasting web application that fetches real-time weather data using APIs based on user-input city names.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/weather.png",
             "github": "https://github.com/abdullahee297/WeatherAppDjango",
-            "demo": "#"
+            "demo": "https://weather-app-django-demi.vercel.app/"
         },
 
         {
@@ -126,7 +127,7 @@ def projects(request):
             "domain": "Django Web App",
             "category": "web",
             "description": "A simple and efficient tool that generates QR codes instantly from user-provided links for easy sharing and access.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/qrcode.png",
             "github": "https://github.com/abdullahee297/Django-QRGenerator",
             "demo": "https://django-qr-generator-13be.vercel.app/"
         },
@@ -135,7 +136,7 @@ def projects(request):
             "title": "Student Portal System",
             "domain": "Database / Desktop App",
             "description": "A student management system using Tkinter and MongoDB that allows storing, updating, and managing student records efficiently. This helps to improe the data handling.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/portal.png",
             "github": "https://github.com/abdullahee297/dsa-student-portal",
             "demo": "#"
         },
@@ -145,7 +146,7 @@ def projects(request):
             "domain": "Game Development / Pygame",
             "category": "game",
             "description": "An interactive space shooter game where players control a rocket to destroy incoming obstacles using lasers, featuring scoring, lives, power-ups, and immersive sound effects.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/game.png",
             "github": "https://github.com/abdullahee297/SpaceWar-Game",
             "demo": "#"
         },
@@ -165,7 +166,7 @@ def projects(request):
             "domain": "Django Web Develoment",
             "category": "web",
             "description": "Easy for the students to calculate there gpa in an easy and quick way.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/gpa.png",
             "github": "https://github.com/abdullahee297/gpa_calculator",
             "demo": "https://gpa-calculator-sigma-six.vercel.app/"
         },
