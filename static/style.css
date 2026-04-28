@@ -1,6 +1,7 @@
+* {
+    transition: all 0.3s ease;
+}
 
-
-/* 1. Base Setup */
 :root {
     --primary-color: #0955f8;
     --bg-light: #9c9c9c;
@@ -10,15 +11,17 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    display: flex;
+section {
     min-height: 100vh;
-    flex-direction: column;
+    padding: 80px 20px;
+    scroll-margin-top: 80px;
+}
+
+body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    
-    background: linear-gradient(90deg, #727272, #1d2223);
-    /* background: linear-gradient(90deg, #014d50, #0ddb70); */
+    background: #020617; /* dark base */
+    color: #e2e8f0;
 }
 
 main {
@@ -26,25 +29,40 @@ main {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    height: 70px;
 
-    background: linear-gradient(90deg, #003d4d, #00c996);
-    backdrop-filter: blur(10px);
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(12px);
 
-    color: #f1f5f9;
-    position: sticky;
-    top: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
+}
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#38bdf8, #a855f7);
+    border-radius: 10px;
+}
+
+#cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25) 0%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
 
 nav .logo{
@@ -63,40 +81,35 @@ nav .logo{
     display: flex;
     gap: 1.8rem;
 }
-
 .links a {
     position: relative;
     text-decoration: none;
-
     color: #e2e8f0;
-    font-size: 1.05rem;        
-    font-weight: 600;            
-    letter-spacing: 0.5px;
-
+    font-size: 1rem;
+    font-weight: 600;
     padding: 6px 10px;
-
-    transition: all 0.3s ease;
 }
 
 .links a::after {
     content: "";
     position: absolute;
+    left: 50%;
+    bottom: -5px;
     width: 0%;
     height: 2px;
-    left: 0;
-    bottom: -5px;
-    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    background: linear-gradient(90deg, #38bdf8, #a855f7);
+    transform: translateX(-50%);
     transition: width 0.3s ease;
-}
-
-.links a:hover {
-    color: #020202;
-    transform: translateY(-2px);
 }
 
 .links a:hover::after {
     width: 100%;
 }
+
+.links a:hover {
+    color: #38bdf8;
+}
+
 
 .links a.active {
     color: #ffffff;
@@ -129,13 +142,8 @@ nav .logo{
     transform: translateY(-2px);
 }
 
-footer {
-    background: linear-gradient(320deg, #003d4d, #00c996);
-    color: rgb(233, 162, 162);
-    padding: 2rem 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
+.links a.active {
+    color: #38bdf8;
 }
 
 footer h1{
@@ -196,12 +204,25 @@ footer h1{
     box-shadow: 0 6px 15px rgba(0, 201, 150, 0.4);
 }
 
+.project-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0f172a;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+}
+
 .project-card img {
     transition: transform 0.5s ease;
 }
 
 .project-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 
