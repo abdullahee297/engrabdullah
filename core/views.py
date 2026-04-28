@@ -32,7 +32,7 @@ def home(request):
             "domain": "Desktop Application / Automation",
             "category": "ai",
             "description": "A complete store management solution built with Tkinter where owners can monitor employee activity, sales, and working hours, while sellers can generate invoices using product scanning just like real retail systems.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/grocery.png",
             "github": "https://github.com/abdullahee297",
             "demo": "#"
         },
@@ -72,7 +72,7 @@ def home(request):
             "domain": "Machine Learning / YOLO",
             "category": "ai",
             "description": "A custom-trained object detection model using YOLO and Label Studio to classify different types of pens such as marker, gel, and ink pens from images.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/pen.jpg",
             "github": "#",
             "demo": "#"
         },
@@ -141,7 +141,7 @@ def home(request):
             "domain": "AI / Computer Vision",
             "category": "ai",
             "description": "An AI-powered computer vision system that allows hands-free control of YouTube using hand gestures, enabling play/pause, speed control, and full-screen mode through finger tracking.",
-            "image": "/static/images/grocery.jpg",
+            "image": "/static/images/yt.png",
             "github": "https://github.com/abdullahee297/ytcontrol-ml",
             "demo": "#"
         },

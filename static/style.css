@@ -4,7 +4,7 @@
 
 :root {
     --primary-color: #0955f8;
-    --bg-light: #9c9c9c;
+    --bg-light: #101828;
 }
 
 html {
@@ -20,12 +20,12 @@ section {
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #020617; /* dark base */
+    background: #020617;
     color: #e2e8f0;
 }
 
 main {
-    flex: 1; /* Pushes footer down */
+    flex: 1;
 }
 
 nav {
@@ -76,7 +76,6 @@ nav .logo{
     font-weight: bold;
 }
 
-/* Links container */
 .links {
     display: flex;
     gap: 1.8rem;
@@ -137,7 +136,7 @@ nav .logo{
     width: 100%;
 }
 
-/* Smooth hover lift */
+
 .links a:hover {
     transform: translateY(-2px);
 }
