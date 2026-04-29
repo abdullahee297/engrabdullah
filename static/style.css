@@ -39,11 +39,19 @@ nav {
     align-items: center;
     padding: 0 2rem;
 
-    background: rgba(2, 6, 23, 0.7);
-    backdrop-filter: blur(12px);
+    background: linear-gradient(90deg, #003d4d, #00c996);
+    backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #f1f5f9;
     z-index: 1000;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+
 }
 
 ::-webkit-scrollbar {
@@ -145,16 +153,15 @@ nav .logo{
     color: #38bdf8;
 }
 
-footer h1{
-    background-image: linear-gradient(90deg, #00ffb7, #ff0090);
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-
-    font-weight: bold;
+footer {
+    background: linear-gradient(320deg, #003d4d, #00c996);
+    color: rgb(233, 162, 162);
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
 }
+
 
 .socials{
     display: flex;
