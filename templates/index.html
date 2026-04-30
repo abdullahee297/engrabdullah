@@ -1,7 +1,5 @@
-{% comment %} {% load static tailwind_tags %} {% endcomment %}
+
 {% load static %}
-{% comment %} {% load django_browser_reload %}
-{% django_browser_reload_script %} {% endcomment %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,15 +12,16 @@
         {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static "style.css" %}">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    {% comment %} {% tailwind_css %} {% endcomment %}
+
 </head>
 <body>
     {% comment %} <div id="cursor-glow"></div> {% endcomment %}
     <nav>
         <span class="logo">Engr. Muhammad Abdullah</span>
-        
+
         <div class="links">
             <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
@@ -35,208 +34,200 @@
     </nav>
 
 
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-slate-900 text-white">
-        <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-slate-900 text-white">
-            
-            <section class="relative min-h-screen flex items-start justify-center pt-20 bg-slate-900 text-white overflow-hidden">
-                
-                <div class="relative z-10 text-center">
-                    
-                    
-                    <img src="{% static 'images/portfolio.jpg' %}"
-                    class="w-50 h-50 mx-auto rounded-full shadow-xl mb-5">
-                
-                <p class="text-sky-400 font-semibold text-lg mb-2 text-left">
-                    B.Sc.
-                </p>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-                    Muhammad Abdullah
-                </h1>
-        
-        
-                <div class="text-lg md:text-xl text-slate-200 space-y-2 mt-4">
-                    <div id="typing-container"></div>
-                </div>
-        
+    <section id="home" class="flex flex-col justify-center items-center text-center pt-36 pb-16 px-6 bg-slate-900 text-white">
+
+        <div class="relative z-10 text-center">
+
+            <img src="{% static 'images/portfolio.jpg' %}"
+                 class="w-40 h-40 mx-auto rounded-full shadow-xl mb-5">
+
+            <p class="text-sky-400 font-semibold text-lg mb-2">
+                B.Sc.
+            </p>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+                Muhammad Abdullah
+            </h1>
+
+            <div class="text-lg md:text-xl text-slate-200 mt-4">
+                <div id="typing-container"></div>
             </div>
-            
-        </section>
-        
-        </section>
-        
+
+        </div>
+
     </section>
 
 
     {% comment %} about section {% endcomment %}
-    
-    <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-slate-900 text-white">
+
+    <section id="about" class="flex flex-col justify-center items-center text-center py-8 px-6 bg-slate-900 text-white">
         <div class="bg-slate-900 min-h-screen py-16 px-6">
-        
+
             <h1 class="text-4xl md:text-5xl font-extrabold text-sky-400 text-center mb-10">
                 About Me
             </h1>
-        
-            <div class="max-w-4xl mx-auto bg-slate-800 text-white p-8 rounded-2xl shadow-lg 
+
+            <div class="max-w-4xl mx-auto bg-slate-800 text-white p-8 rounded-2xl shadow-lg
                         border-t-4 border-sky-400
                         transition duration-300 transform hover:-translate-y-2 hover:shadow-sky-500/40">
-        
+
                 <p class="text-gray-300 text-lg leading-relaxed mb-6 text-justify">
-                    I am a passionate and driven <span class="text-sky-400 font-semibold">Final Year Electrical Engineering student</span> 
-                    at <span class="text-sky-400 font-semibold">UET Lahore</span>, with a strong interest in 
+                    I am a passionate and driven <span class="text-sky-400 font-semibold">Final Year Electrical Engineering student</span>
+                    at <span class="text-sky-400 font-semibold">UET Lahore</span>, with a strong interest in
                     <span class="text-sky-400">technology, innovation, and problem-solving</span>.
                 </p>
-        
+
                 <p class="text-gray-300 text-lg leading-relaxed mb-6 text-justify">
-                    I specialize in <span class="text-sky-400 font-semibold">Python Development</span> and 
-                    <span class="text-sky-400 font-semibold">Machine Learning</span>, where I enjoy building intelligent systems, 
-                    automation tools, and real-world applications. I have hands-on experience in developing 
+                    I specialize in <span class="text-sky-400 font-semibold">Python Development</span> and
+                    <span class="text-sky-400 font-semibold">Machine Learning</span>, where I enjoy building intelligent systems,
+                    automation tools, and real-world applications. I have hands-on experience in developing
                     scalable solutions and working with modern frameworks.
                 </p>
-        
+
                 <p class="text-gray-300 text-lg leading-relaxed mb-6 text-justify">
-                    Alongside software expertise, I possess solid knowledge in 
-                    <span class="text-sky-400 font-semibold">PCB Designing</span> and 
-                    <span class="text-sky-400 font-semibold">AutoCAD</span>, allowing me to bridge the gap 
+                    Alongside software expertise, I possess solid knowledge in
+                    <span class="text-sky-400 font-semibold">PCB Designing</span> and
+                    <span class="text-sky-400 font-semibold">AutoCAD</span>, allowing me to bridge the gap
                     between hardware and software systems effectively.
                 </p>
-        
+
                 <p class="text-gray-300 text-lg leading-relaxed mb-6 text-justify">
-                    I am highly motivated, detail-oriented, and always eager to learn new technologies. 
-                    My goal is to contribute to impactful projects in 
-                    <span class="text-sky-400 font-semibold">AI, Embedded Systems, and Automation</span> 
+                    I am highly motivated, detail-oriented, and always eager to learn new technologies.
+                    My goal is to contribute to impactful projects in
+                    <span class="text-sky-400 font-semibold">AI, Embedded Systems, and Automation</span>
                     while continuously improving my technical and professional skills.
                 </p>
-        
+
                 <p class="text-gray-400 text-md leading-relaxed text-justify">
-                    I am currently seeking opportunities where I can apply my knowledge, grow as a professional, 
+                    I am currently seeking opportunities where I can apply my knowledge, grow as a professional,
                     and make meaningful contributions to innovative and forward-thinking teams.
                 </p>
-        
+
             </div>
-        
+
         </div>
     </section>
-    
-    
+
+
     {% comment %} education {% endcomment %}
-    
-    <section id="education" class="bg-slate-900 min-h-screen py-20 px-6" data-aos="fade-up">
+
+    <section id="education" class="bg-slate-900 min-h-screen py-10 px-6" data-aos="fade-up">
         <div class="bg-slate-900 min-h-screen py-12 px-4">
-        
+
             <h1 class="text-4xl font-extrabold text-sky-400 text-center mb-12">
                 My Education Journey
             </h1>
-        
+
             <div class="flex flex-wrap justify-center items-center gap-6">
-        
-                <div class="w-full sm:w-80 bg-slate-800 text-white p-6 rounded-2xl shadow-lg 
+
+                <div class="w-full sm:w-80 bg-slate-800 text-white p-6 rounded-2xl shadow-lg
                             border-t-4 border-sky-400 text-center
                             transition duration-300 transform hover:-translate-y-2 hover:scale-105 hover:shadow-sky-500/40">
-                            
+
                             <span class="text-sm text-sky-400 font-semibold">Apr 2018 - Aug 2020</span>
-        
+
                             <h1 class="text-xl font-bold mt-2">Matriculation in Science</h1>
-        
+
                     <h3 class="text-gray-300 mt-1">Fazaia Intermediate College</h3>
-        
+
                     <span class="text-gray-400 text-sm">Lahore, Pakistan</span>
                 </div>
-        
-                <div class="w-full sm:w-80 bg-slate-800 text-white p-6 rounded-2xl shadow-lg 
+
+                <div class="w-full sm:w-80 bg-slate-800 text-white p-6 rounded-2xl shadow-lg
                             border-t-4 border-sky-400 text-center
                             transition duration-300 transform hover:-translate-y-2 hover:scale-105 hover:shadow-sky-500/40">
-        
+
                     <span class="text-sm text-sky-400 font-semibold">Sep 2020 - July 2022</span>
-        
+
                     <h1 class="text-xl font-bold mt-2">FSc in Pre Engineering</h1>
-        
+
                     <h3 class="text-gray-300 mt-1">Fazaia Intermediate College</h3>
-        
+
                     <span class="text-gray-400 text-sm">Lahore, Pakistan</span>
                 </div>
-        
-                <div class="w-full sm:w-80 bg-slate-800 text-white p-6 rounded-2xl shadow-lg 
+
+                <div class="w-full sm:w-80 bg-slate-800 text-white p-6 rounded-2xl shadow-lg
                             border-t-4 border-sky-400 text-center
                             transition duration-300 transform hover:-translate-y-2 hover:scale-105 hover:shadow-sky-500/40">
-        
+
                             <span class="text-sm text-sky-400 font-semibold">Dec 2022 - Present</span>
-        
+
                     <h1 class="text-xl font-bold mt-2">Bachelor's</h1>
-        
+
                     <h3 class="text-gray-300 mt-1">University of Engineering and Technology</h3>
-        
+
                     <span class="text-gray-400 text-sm">Lahore, Pakistan</span>
                 </div>
-        
+
             </div>
         </div>
-        
+
     </section>
-    
+
 
     {% comment %} Experience {% endcomment %}
 
-    <section id="skill" class="bg-slate-900 min-h-screen py-20 px-6" data-aos="fade-up">
+    <section id="skill" class="bg-slate-900 min-h-screen py-10 px-6" data-aos="fade-up">
         <div class="bg-slate-900 min-h-screen py-16 px-6">
-    
+
         <h1 class="text-6xl font-bold text-center mb-14 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             Skills
         </h1>
-    
+
         <div class="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-    
+
             {% for skill, percent, icon in skills %}
-    
+
             <div class="group relative rounded-xl p-[1px] hover:from-purple-500 hover:to-pink-500 transition duration-500">
-                
+
                 <div class="relative bg-slate-800 rounded-xl p-5">
-    
+
                     <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-purple-400 to-pink-600 rounded-l-xl"></div>
-    
+
                     <div class="pl-4 text-center">
-    
+
                         <div class="text-2xl mb-2">{{ icon }}</div>
-    
+
                         <h2 class="text-lg font-semibold mb-3 bg-gradient-to-r from-gray-300 to-gray-300 bg-clip-text text-transparent group-hover:from-purple-400 group-hover:to-pink-600 transition duration-500">
                             {{ skill }}
                         </h2>
-    
+
                         <div class="w-full bg-slate-700 rounded-full h-1.5">
                             <div class="h-1.5 rounded-full bg-gradient-to-r from-purple-400 to-pink-600" style="width: {{ percent }}%"></div>
                         </div>
-    
+
                         <p class="text-gray-400 mt-1 text-xs">{{ percent }}%</p>
-    
+
                     </div>
-    
+
                 </div>
-    
+
             </div>
-    
+
             {% endfor %}
-    
+
         </div>
-    
+
     </div>
     </section>
-    
+
     {% comment %} Experience {% endcomment %}
 
-    <section id="experience" class="bg-slate-900 min-h-screen py-20 px-6" data-aos="fade-up">
+    <section id="experience" class="bg-slate-900 min-h-screen py-10 px-6" data-aos="fade-up">
         <div class="bg-slate-900 min-h-screen py-16 px-6">
-            
+
             <h1 class="text-6xl font-bold text-center mb-14 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
                 Experience
             </h1>
-            
+
             <div class="max-w-6xl mx-auto grid gap-10 md:grid-cols-2">
-            
+
                 <div class="relative rounded-2xl p-[1px] bg-gradient-to-r from-transparent via-transparent to-transparent hover:from-purple-500 hover:via-slate-700 hover:to-pink-500 transition duration-500">
-                    
+
                     <div class="relative bg-slate-800 rounded-2xl p-8">
-                        
+
                         <div class="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-purple-400 to-pink-600 rounded-l-2xl"></div>
-            
+
                         <div class="flex flex-col items-center text-center">
                             <h2 class="text-2xl font-semibold text-pink-400 mb-3">
                                 Packages Convertor Limited
@@ -248,16 +239,16 @@
                                 11 July 2026 - 22 August 2026
                             </span>
                         </div>
-            
+
                     </div>
                 </div>
-            
+
                 <div class="relative rounded-2xl p-[1px] bg-gradient-to-r from-transparent via-transparent to-transparent hover:from-purple-500 hover:via-slate-700 hover:to-pink-500 transition duration-500">
-                    
+
                     <div class="relative bg-slate-800 rounded-2xl p-8">
-                        
+
                         <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-purple-400 to-pink-600 rounded-l-2xl"></div>
-            
+
                         <div class="flex flex-col items-center text-center">
                             <h2 class="text-2xl font-semibold text-pink-400 mb-3">
                                 IndusLytics
@@ -269,16 +260,16 @@
                                 20 April 2026 - Present
                             </span>
                         </div>
-            
+
                     </div>
                 </div>
-            
+
                 <div class="relative rounded-2xl p-[1px] bg-gradient-to-r from-transparent via-transparent to-transparent hover:from-purple-500 hover:via-slate-700 hover:to-pink-500 transition duration-500">
-                    
+
                     <div class="relative bg-slate-800 rounded-2xl p-8">
-                        
+
                         <div class="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-purple-400 to-pink-600 rounded-l-2xl"></div>
-            
+
                         <div class="flex flex-col items-center text-center">
                             <h2 class="text-2xl font-semibold text-pink-400 mb-3">
                                 Tana Bana Jewels
@@ -290,12 +281,12 @@
                                 13 Sep 2026 - Present
                             </span>
                         </div>
-            
+
                     </div>
                 </div>
-            
+
             </div>
-            
+
             </div>
     </section>
 
@@ -303,12 +294,12 @@
 
     <section id="projects" class="bg-slate-900 min-h-screen py-20 px-6" data-aos="fade-up">
         <div class="bg-slate-900 min-h-screen py-16 px-6">
-    
+
         <!-- Heading -->
         <h1 class="text-6xl font-bold text-center mb-10 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             My Projects
         </h1>
-    
+
         <div class="flex flex-wrap justify-center gap-3 mb-12">
             <button class="filter-btn active px-4 py-2 rounded-full bg-purple-500 text-white text-sm">All</button>
             <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-gray-300 text-sm">AI</button>
@@ -316,79 +307,79 @@
             <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-gray-300 text-sm">Web</button>
             <button class="filter-btn px-4 py-2 rounded-full bg-slate-700 text-gray-300 text-sm">Game</button>
         </div>
-    
+
         <div class="max-w-7xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    
+
             {% for project in projects %}
-    
+
             <div class="project-card group relative rounded-2xl p-[1px]
                 bg-slate-800 transition duration-500
                 hover:bg-gradient-to-r hover:from-purple-500 hover:via-slate-700 hover:to-pink-500"
                  data-category="{{ project.category }}">
-    
+
                 <div class="rounded-2xl overflow-hidden bg-slate-900">
-    
+
                     <div class="h-40 overflow-hidden">
-                        <img src="{{ project.image }}" 
+                        <img src="{{ project.image }}"
                              class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
-    
+
                     <div class="p-5">
-    
+
                         <span class="text-xs text-purple-400 uppercase tracking-wide">
                             {{ project.domain }}
                         </span>
-    
+
                         <h2 class="text-xl font-semibold text-white mt-2 mb-2">
                             {{ project.title }}
                         </h2>
-    
+
                         <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">
                             {{ project.description }}
                         </p>
-    
+
                         <div class="flex gap-3">
-    
+
                             <a href="{{ project.github }}" target="_blank"
                                class="text-xs px-3 py-1 rounded bg-slate-700 hover:bg-purple-500 transition">
                                 GitHub
                             </a>
-    
+
                             <a href="{{ project.demo }}" target="_blank"
                                class="text-xs px-3 py-1 rounded bg-slate-700 hover:bg-pink-500 transition">
                                 Live
                             </a>
-    
+
                         </div>
-    
+
                     </div>
                 </div>
-    
+
             </div>
-    
+
             {% endfor %}
-    
+
         </div>
-    
+
     </div>
-    
+
     <script>
         const buttons = document.querySelectorAll(".filter-btn");
         const cards = document.querySelectorAll(".project-card");
-    
+
         buttons.forEach(btn => {
             btn.addEventListener("click", () => {
-    
+
                 buttons.forEach(b => {
                     b.classList.remove("bg-purple-500", "text-white", "active");
                     b.classList.add("bg-slate-700", "text-gray-300");
                 });
-    
+
                 btn.classList.remove("bg-slate-700", "text-gray-300");
                 btn.classList.add("bg-purple-500", "text-white", "active");
-    
+
                 const filter = btn.textContent.toLowerCase();
-    
+
                 cards.forEach(card => {
                     if (filter === "all" || card.dataset.category === filter) {
                         card.style.display = "block";
@@ -396,7 +387,7 @@
                         card.style.display = "none";
                     }
                 });
-    
+
             });
         });
     </script>
@@ -406,65 +397,65 @@
 
     {% comment %} contact {% endcomment %}
 
-    <section id="contact" class="bg-slate-900 min-h-screen py-20 px-6" data-aos="fade-up">    
+    <section id="contact" class="bg-slate-900 min-h-screen py-20 px-6" data-aos="fade-up">
         <section class="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6">
         <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10">
             <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
                 <h2 class="text-3xl font-bold mb-6 text-[#00ffb7]">Contact Me</h2>
-        
+
                 {% if success %}
                     <p class="text-[#00ffb7] mb-4">Message sent successfully!</p>
                 {% endif %}
-        
+
                 <form method="POST">
                     {% csrf_token %}
-        
+
                     <input type="text" name="name" placeholder="Your Name"
                            class="w-full mb-4 p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00ffb7]">
-        
+
                     <input type="email" name="email" placeholder="Your Email"
                            class="w-full mb-4 p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00ffb7]">
-        
+
                     <textarea name="message" rows="5" placeholder="Your Message"
                               class="w-full mb-4 p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00ffb7]"></textarea>
-        
+
                     <button type="submit"
                             class="w-full bg-[#00ffb7] text-black hover:bg-[#00e6a5] transition p-3 rounded font-semibold">
                         Send Message
                     </button>
                 </form>
             </div>
-        
+
             <div class="flex flex-col justify-center">
                 <h2 class="text-3xl font-bold mb-6 text-[#00ffb7]">Get in Touch</h2>
-        
+
                 <p class="mb-4 text-gray-300">
                     Feel free to contact me for any work or collaboration.
                 </p>
-        
+
                 <div class="space-y-4">
                     <p>
                         📧
                         <span class="text-[#ffffff]">2022ee297@student.uet.edu.pk</span>
                     </p>
-        
+
                     <p>
                         📞
                         <span class="text-[#ffffff]">+92 328 8512392</span>
-                    </p> 
-        
+                    </p>
+
                     <p>
                         📍
                         <span class="text-[#ffffff]">Lahore, Pakistan</span>
                     </p>
                 </div>
             </div>
-        
+
         </div>
         </section>
-        
+
     </section>
-    
+
 
 
     <footer>
@@ -473,21 +464,21 @@
             <a href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHalhltVA3YGQAAAZ2zy8Rot6nvRNMELAiLeQcIY8VolA5357D5-BCWfk4pVMt8Z4oJfY44Kngce2ypb19d4P5nbSpelJiIp2OQoK5tbuIpJLpHRoRQwDSGPiR9kdkSI_qLj3M=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmuhammad-abdullah-850b332a5" target="_blank">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-            
+
             <a href="https://github.com/abdullahee297" target="_blank">
                 <i class="fab fa-github"></i> GitHub
             </a>
-            
+
             <a href="https://instagram.com/abdullahsketchit" target="_blank">
                 <i class="fab fa-instagram"></i> Instagram
             </a>
             <a href="#">
                 <i class="fas fa-globe"></i> Portfolio
             </a>
-                
+
 </div>
     </footer>
-    
+
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init({
@@ -560,10 +551,5 @@ window.addEventListener("scroll", () => {
     });
 
 });
-{% comment %} document.addEventListener("mousemove", (e) => {
-    const glow = document.getElementById("cursor-glow");
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
-}); {% endcomment %}
 </script>
 </html>
