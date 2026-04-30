@@ -1,7 +1,7 @@
-{% load static tailwind_tags %}
+{% comment %} {% load static tailwind_tags %} {% endcomment %}
 {% load static %}
-{% load django_browser_reload %}
-{% django_browser_reload_script %}
+{% comment %} {% load django_browser_reload %}
+{% django_browser_reload_script %} {% endcomment %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static "style.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    {% tailwind_css %}
+    {% comment %} {% tailwind_css %} {% endcomment %}
 </head>
 <body>
     {% comment %} <div id="cursor-glow"></div> {% endcomment %}
@@ -560,10 +560,10 @@ window.addEventListener("scroll", () => {
     });
 
 });
-document.addEventListener("mousemove", (e) => {
+{% comment %} document.addEventListener("mousemove", (e) => {
     const glow = document.getElementById("cursor-glow");
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
-});
+}); {% endcomment %}
 </script>
 </html>
