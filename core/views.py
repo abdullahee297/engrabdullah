@@ -44,7 +44,7 @@ def home(request):
             "description": "A powerful web application that allows users to upload PDFs and perform operations like data extraction, merging, watermarking, and encryption in a user-friendly interface.",
             "image": "/static/images/pdf.png",
             "github": "https://github.com/abdullahee297/Django-PyPDF",
-            "demo": "https://django-py-pdf-w64m.vercel.app/"
+            "demo": "https://django-py-pdf.vercel.app/"
         },
 
         {
