@@ -104,7 +104,7 @@ def home(request):
             "description": "A weather forecasting web application that fetches real-time weather data using APIs based on user-input city names.",
             "image": "/static/images/weather.png",
             "github": "https://github.com/abdullahee297/WeatherAppDjango",
-            "demo": "https://weather-app-django-demi.vercel.app/"
+            "demo": "https://weather-app-seven-sepia-25.vercel.app/"
         },
 
         {
